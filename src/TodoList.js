@@ -1,9 +1,5 @@
-function TodoList({children}) {
-    return (
-      <ul>
-        {children}
-      </ul>
-    );
-  }
+function TodoList({ children }) {
+  return <ul className="TodoList">{children}</ul>;
+}
 
-  export { TodoList };
+export { TodoList };

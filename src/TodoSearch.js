@@ -1,7 +1,7 @@
-function TodoSearch() {
-    return (
-      <input placeholder="Cebolla" />
-    );
-  }
+import "./TodoSearch.css";
 
-  export { TodoSearch };
+function TodoSearch() {
+  return <input className="TodoSearch" placeholder="Cebolla" />;
+}
+
+export { TodoSearch };
