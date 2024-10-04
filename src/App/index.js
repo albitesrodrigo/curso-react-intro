@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocalStorage } from "./useLocalStorage";
 import { AppUI } from "./AppUI";
 
@@ -19,6 +19,22 @@ function App() {
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
+
+  console.log("Log 1");
+
+  // useEffect(() => {
+  //   console.log("Log 2");
+  // });
+
+  // useEffect(() => {
+  //   console.log("Log 2");
+  // }, []);
+
+  useEffect(() => {
+    console.log("Log 2");
+  }, [searchValue]);
+
+  console.log("Log 3");
 
   const searchedTodos = todos.filter((todo) => {
     const todoText = todo.text.toLowerCase();
@@ -41,16 +57,16 @@ function App() {
   };
 
   return (
-  <AppUI 
-    totalTodos={totalTodos}
-    completedTodos={completedTodos}
-    searchValue={searchValue}
-    setSearchValue={setSearchValue}
-    searchedTodos={searchedTodos}
-    completeTodo={completeTodo}
-    deleteTodo={deleteTodo}
-  />
-);
+    <AppUI
+      totalTodos={totalTodos}
+      completedTodos={completedTodos}
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      searchedTodos={searchedTodos}
+      completeTodo={completeTodo}
+      deleteTodo={deleteTodo}
+    />
+  );
 }
 
 export default App;
